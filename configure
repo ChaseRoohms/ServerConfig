@@ -16,3 +16,4 @@ sudo grep -qxF "$LINE" "$FILE" || echo "$LINE" | sudo tee -a "$FILE"
 LINE="PrintLastLog no"
 FILE="/etc/ssh/sshd_config"
 sudo grep -qxF "$LINE" "$FILE" || echo "$LINE" | sudo tee -a "$FILE"
+sudo systemctl restart ssh
