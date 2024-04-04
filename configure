@@ -3,8 +3,14 @@
 sudo rm /etc/update-motd.d/*
 sudo rm /etc/motd
 sudo touch /etc/motd
-sudo cp ~/.ServerConfig.git/[0-9][0-9]-* /etc/update-motd.d/
-sudo cp ~/.ServerConfig.git/$(hostname)/[0-9][0-9]-* /etc/update-motd.d/ || echo "No machine specific config for $(hostname) found."
+sudo cp /home/$(whoami)/.ServerConfig.git/[0-9][0-9]-* /etc/update-motd.d/
+
+if [ -d /home/$(whoami)/.ServerConfig.git/$(hostname) ]; then
+  sudo cp /home/$(whoami)/.ServerConfig.git/$(hostname)/[0-9][0-9]-* /etc/update-motd.d/
+else 
+  echo "No machine specific config for $(hostname) found, using defaults."
+fi
+
 sudo chown root:root /etc/update-motd.d/[0-9][0-9]-*
 sudo chmod 0755 /etc/update-motd.d/[0-9][0-9]-*
 
