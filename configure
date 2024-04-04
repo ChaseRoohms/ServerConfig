@@ -1,0 +1,18 @@
+#!/bin/bash
+
+sudo rm /etc/update-motd.d/*
+sudo rm /etc/motd
+sudo touch /etc/motd
+sudo cp ~/.ServerConfig.git/[0-9][0-9]-* /etc/update-motd.d/
+sudo cp ~/.ServerConfig.git/$(hostname)/[0-9][0-9]-* /etc/update-motd.d/
+sudo chown root:root /etc/update-motd.d/[0-9][0-9]-*
+sudo chmod 0755 /etc/update-motd.d/[0-9][0-9]-*
+
+
+LINE="export PS1='\[\e[92;1m\]\h\[\e[0m\] \[\e[38;5;27;1m\]\w\[\e[0m\] : '"
+FILE="/home/$(whoami)/.bashrc"
+sudo grep -qxF "$LINE" "$FILE" || echo "$LINE" | sudo tee -a "$FILE"
+
+LINE="PrintLastLog no"
+FILE="/etc/ssh/sshd_config"
+sudo grep -qxF "$LINE" "$FILE" || echo "$LINE" | sudo tee -a "$FILE"
