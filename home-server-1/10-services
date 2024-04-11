@@ -27,7 +27,6 @@ declare -A docker
 #           docker[containername]="Name:                Description"
            docker[dashdot-dash-1]="DashDot:             Dashboard"
 docker[pterodactyl-wings-wings-1]="Pterodactyl Wings:   Gameserver hosting"
-                   docker[homarr]="Homarr:              Custom web dashboard"
                   docker[gluetun]="Gluetun:             Docker VPN interface"
                  docker[prowlarr]="Prowlarr:            Indexers"
                    docker[sonarr]="Sonarr:              TV show manager"
