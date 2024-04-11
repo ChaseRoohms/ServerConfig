@@ -28,6 +28,7 @@ declare -A docker
           docker[dash-dot-dash-1]="DashDot:             Dashboard"
 docker[pterodactyl-panel-panel-1]="Pterodactyl Panel:   Gameserver panel"
             docker[homeassistant]="HomeAssistant:       Home automtion software"
+                   docker[homarr]="Homarr:              Custom web dashboard"
 
 declare -A services
 #           services[servicename]="Name:                Description"
