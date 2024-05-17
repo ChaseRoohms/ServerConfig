@@ -32,7 +32,7 @@ docker[pterodactyl-panel-panel-1]="Pterodactyl Panel:   Gameserver panel"
 
 declare -A services
 #           services[servicename]="Name:                Description"
-   services[wg-quick@wg0.service]="PiPVN:               Wireguard VPN Protocol"
+   services[wg-quick@wg0.service]="Home VPN:            Wireguard VPN Protocol"
 
 declare -A apps
 #               apps[prcoessname]="Name:                Description"
