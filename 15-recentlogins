@@ -27,7 +27,7 @@ recentlogins ()
 {
   echo -e "${lightblue}Most Recent Logins:"
 
-  for i in {4..2}
+  for i in {3..1}
   do
     second=$(last | sed -n ${i}p | awk '{print $2}')
     if [ "$second" == ":1" ]; then
