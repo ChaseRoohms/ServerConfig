@@ -4,6 +4,7 @@ sudo rm /etc/update-motd.d/*
 sudo rm /etc/motd
 sudo touch /etc/motd
 sudo cp /home/$(whoami)/.ServerConfig.git/[0-9][0-9]-* /etc/update-motd.d/
+cp /home/$(whoami)/.ServerConfig.git/.docker /home/$(whoami)/
 
 if [ -d /home/$(whoami)/.ServerConfig.git/$(hostname) ]; then
   sudo cp /home/$(whoami)/.ServerConfig.git/$(hostname)/[0-9][0-9]-* /etc/update-motd.d/
